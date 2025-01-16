@@ -1,23 +1,22 @@
-// swift-tools-version: 5.10
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
     name: "DGPlayer",
+    platforms: [
+        .iOS(.v13), // Define the platform you want to target (iOS)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "DGPlayer",
-            targets: ["DGPlayer"]),
+            name: "DGPlayer",  // The name of the library
+            targets: ["DGPlayer"]  // The target containing the library code
+        ),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
+        // This target contains the code for the library
         .target(
-            name: "DGPlayer"),
-        .testTarget(
-            name: "DGPlayerTests",
-            dependencies: ["DGPlayer"]),
+            name: "DGPlayer",  // Name of the target (matches the source folder name)
+            dependencies: []  // List any dependencies if needed
+        )
     ]
 )
